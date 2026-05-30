@@ -66,6 +66,8 @@ Build the new `resume/master/master_resume.tex` from the structure in `resume/ma
 
 Drop any section the user has no content for. Keep the master complete: it should hold everything true about the user, even bullets that won't fit on a one-page tailored resume later. Tailoring trims; the master is the full record.
 
+Write it ATS-strong from the start (see the "Writing resume content for ATS" rules in `CLAUDE.md`): name the real tools, languages, and methods the person used with their standard industry terms, lead bullets with action verbs, and quantify wherever they have a number. A keyword-rich, truthful master gives `/jobupdate` the right real terms to match against any JD later. Never stuff or invent.
+
 ## Step 5 — Build, then ask the user to review
 
 1. Run `bash build.sh` from the workspace root.

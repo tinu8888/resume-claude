@@ -167,3 +167,23 @@ Two points of precedence, so there's never any doubt:
 
 1. **On any disagreement, the rules in this file win.** They are the house style for this workspace. The humanizer is the deeper reference you pull from, not an override.
 2. **Ignore the humanizer's "PERSONALITY AND SOUL" advice for resumes.** Opinions, first person, humor, and deliberate "mess" do not belong in resume bullets. A resume is reference text, and the humanizer itself says to keep reference text neutral and plain. Save the personality advice for longer prose like a cover letter or LinkedIn About, where it fits.
+
+## Writing resume content for ATS (always on)
+
+Don't wait for `/atscheck` to fix a low score. Write every resume bullet, summary, and skills line so it scores well in the first place. An ATS reads the text and ranks it; a recruiter reads it right after. Good content serves both. Full rubric: `references/ats-guidelines.md`.
+
+Apply these while writing, not just while checking:
+
+- **Use the real, specific terms for what the person did.** Name the actual tools, languages, frameworks, and methods (PostgreSQL, Kubernetes, FreeRTOS, CI/CD), not vague phrases like "various technologies." These are the keywords an ATS matches.
+- **When tailoring to a JD, mirror its exact wording** for skills the person genuinely has. If their background says "K8s" and the JD says "Kubernetes," write "Kubernetes." Match the JD's job-title language too when it's truthful.
+- **Spell out an acronym with its full form once**, so both match: "continuous integration and deployment (CI/CD)." After that, the short form is fine.
+- **Put hard skills in two places:** the Skills section (for a clean keyword list) and inside experience bullets (so they show up in context, which ranks higher).
+- **Lead with a strong past-tense action verb** (Built, Led, Shipped, Reduced, Designed, Drove).
+- **Quantify** with a number, percent, dollar amount, or time whenever the person has one.
+- **Use standard section headings** (Summary, Experience, Education, Skills). The template already does, keep it.
+
+Order of precedence when these pull against each other:
+
+1. **Honesty wins.** Never add a keyword for a skill the person doesn't have, and never keyword-stuff (repeating terms unnaturally, hidden white text, a wall of skills). ATS and recruiters both penalize stuffing, and it breaks the hard rule above.
+2. **Then keep it human and readable** (these writing rules and the humanizer). A bullet a recruiter enjoys reading and that happens to contain the right real keywords beats a keyword list that reads like a robot wrote it.
+3. **Then optimize for keywords** within those two limits. Work the right real terms into natural sentences. Surface, don't stuff.

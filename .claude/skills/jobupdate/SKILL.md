@@ -43,6 +43,8 @@ Create the folder. Save the job description there as `jobs/<folder>/job_descript
 
 You may rephrase wording for emphasis. You may not add a skill, tool, metric, or responsibility that isn't in the master.
 
+Write for ATS as you select (see the "Writing resume content for ATS" rules in `CLAUDE.md`): for skills the person genuinely has, use the JD's exact wording (their master says "K8s," the JD says "Kubernetes," write "Kubernetes"), keep the standard section headings, and make sure the JD's real must-have terms appear both in the Skills section and in a bullet. This is rewording and surfacing real content to match the posting, never stuffing or inventing.
+
 ## Step 5 — Surface gaps as questions (do not fill them)
 
 After matching, list anything the JD asks for that the master doesn't clearly cover. Present each as a question, not a gap to paper over:
