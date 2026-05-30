@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash build.sh)",
+      "Bash(./build.sh)",
+      "Bash(bash setup.sh)",
+      "Bash(./setup.sh)",
+      "Bash(bash install.sh)",
+      "Bash(./install.sh)",
+      "Bash(pdftotext *)",
+      "Bash(pdfinfo *)",
+      "Bash(xelatex *)",
+      "Read(./**)"
+    ]
+  }
+}

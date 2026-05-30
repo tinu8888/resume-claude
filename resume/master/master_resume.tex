@@ -1,0 +1,174 @@
+%------------------------
+% MASTER RESUME
+%
+% >>> THIS IS SAMPLE DATA (Tony Stark / Iron Man) <<<
+% It's here so you can see what a finished, filled-in master resume looks like.
+% Open master_resume.pdf to view it.
+%
+% Run /start in Claude to REPLACE all of this with your own details, pulled from
+% your LinkedIn profile and old resume, section by section. Nothing below is kept.
+%
+% The master is the single source of truth for every tailored resume.
+% Structure reference: resume/master/resume_template.tex (do not redesign it).
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry}
+
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[xetex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{fontspec}
+% Picks the first font that exists on your machine, so this builds anywhere.
+\IfFontExistsTF{Arial}{\setmainfont{Arial}}{%
+  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
+    \IfFontExistsTF{TeX Gyre Heros}{\setmainfont{TeX Gyre Heros}}{%
+      \setmainfont{Latin Modern Roman}}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\setstretch{1}
+
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {#1}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubheadingCompact}[3]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}, #2 & \textit{#3} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+\vspace{-10pt}
+
+% HEADING
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Tony Stark}} & Mobile: +1(310)5550100 \\
+  Email: {tony@starkindustries.com} & Github:
+  \href{https://github.com/tonystark}{github.com/tonystark}\\
+  Location: Malibu, CA & LinkedIn: \href{https://www.linkedin.com/in/tonystark}{linkedin.com/in/tonystark}
+\end{tabular*}
+\vspace{-10pt}
+
+% SUMMARY
+\section{Summary}
+Engineer and CEO of Stark Industries with 20+ years building advanced energy, propulsion, and AI systems. Designed the arc reactor and the Iron Man suit program. Founding member of the Avengers. MIT graduate in electrical engineering and physics.
+\vspace{-10pt}
+
+% EXPERIENCE
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheadingCompact{Stark Industries (CEO \& Chief Engineer)}{Malibu, CA}{05/08 - Present}
+\vspace{-2pt}
+\begin{itemize}[label=$\bullet$, leftmargin=8pt, itemsep=-1pt, topsep=2pt]
+    \item Redirected the company from weapons manufacturing to clean energy, closing the weapons division and shipping an arc-reactor power platform within 12 months.
+    \item Designed and built the arc reactor, a self-sustaining power source that runs the company campus and every suit in the program.
+    \item Led R\&D for the Iron Man suit across 40+ iterations, improving flight ceiling, armor response time, and power efficiency each cycle.
+    \item Built J.A.R.V.I.S., a natural-language AI that runs suit systems, lab automation, and diagnostics in real time.
+    \item Grew Stark Industries clean-energy revenue to a market lead while holding 1000+ active patents in energy, materials, and propulsion.
+\end{itemize}
+
+\resumeSubheadingCompact{The Avengers (Founding Member)}{New York, NY}{05/12 - Present}
+\vspace{-2pt}
+\begin{itemize}[label=$\bullet$, leftmargin=8pt, itemsep=-1pt, topsep=2pt]
+    \item Co-founded a response team for large-scale threats, leading hardware, aerial operations, and field communications.
+    \item Designed and funded the team's compound, comms network, and rapid-deployment systems.
+    \item Built and flew an autonomous suit fleet (the Iron Legion) for search, rescue, and containment.
+\end{itemize}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% VOLUNTEER EXPERIENCE
+\section{Volunteer Experience}
+\resumeSubHeadingListStart
+\resumeSubItem{Maria Stark Foundation}{Funded science education and research grants, including a full endowment for an MIT graduating class.}
+\resumeSubItem{Stark Expo}{Revived a public expo for open scientific collaboration, hosting teams from industry and universities.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% EDUCATION
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Massachusetts Institute of Technology}{Cambridge, MA}
+    {B.S. Electrical Engineering and Physics, GPA: 4.00, summa cum laude}{09/87 - 05/91}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% PROJECTS
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Miniaturized Arc Reactor}{Built a palm-sized arc reactor delivering high sustained output from a portable core, powering the wearable suit.}
+\resumeSubItem{Clean Energy Grid}{Prototyped a city-scale clean power grid running entirely on arc-reactor cells.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% PUBLICATIONS
+\section{Publications}
+\resumeSubHeadingListStart
+\resumeSubItem{Self-Sustaining Arc Reactor Design}{Stark Industries technical white paper, 2010.}
+\resumeSubItem{Applied Repulsor Physics}{Presented at the Stark Expo, 2010.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% HONORS AND AWARDS
+\section{Honors and Awards}
+\resumeSubHeadingListStart
+\resumeSubItem{Apogee Award for Industrial Innovation}{Awarded for advances in clean-energy engineering.}
+\resumeSubItem{National Medal of Technology}{Recognized for contributions to energy and aerospace systems.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% CERTIFICATIONS
+\section{Certifications}
+\resumeSubHeadingListStart
+\resumeSubItem{FAA Commercial Pilot License}{Fixed-wing and experimental aircraft.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% SKILLS SUMMARY
+\section{Skills Summary}
+\resumeSubHeadingListStart
+\resumeSubItem{Engineering \& Hardware}{Mechanical design, propulsion, materials science, nanotech, electronics, robotics}
+\resumeSubItem{Software \& AI}{Natural-language AI, real-time control systems, Python, C++, embedded firmware}
+\resumeSubItem{Leadership}{R\&D leadership, product strategy, fundraising, crisis operations}
+\resumeSubHeadingListEnd
+
+\end{document}

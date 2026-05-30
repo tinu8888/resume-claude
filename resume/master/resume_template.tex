@@ -1,0 +1,182 @@
+%------------------------
+% Resume LaTeX reference
+%
+% This is the canonical structure for every resume in this workspace.
+% Both /start (master) and /jobupdate (tailored) reuse this exact preamble
+% and the macros below. Do not redesign the layout. Fill the content only.
+%
+% Build with XeLaTeX (see requirements.md). Run `bash build.sh` from the root.
+%
+% Font note: this template uses "TeX Gyre Heros", a free Helvetica/Arial clone
+% that ships with every TeX Live / MacTeX install, so it works on any machine.
+% On macOS you can swap it for Arial: change the \setmainfont line below.
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry}
+
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[xetex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{fontspec}
+% Picks the first font that exists on your machine, so this builds anywhere
+% with no edits. Arial/Helvetica are on every Mac. TeX Gyre Heros ships with
+% full TeX Live (Linux). Latin Modern is the last-resort built-in fallback.
+\IfFontExistsTF{Arial}{\setmainfont{Arial}}{%
+  \IfFontExistsTF{Helvetica}{\setmainfont{Helvetica}}{%
+    \IfFontExistsTF{TeX Gyre Heros}{\setmainfont{TeX Gyre Heros}}{%
+      \setmainfont{Latin Modern Roman}}}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Set line spacing
+\setstretch{1}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {#1}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingCompact}[3]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}, #2 & \textit{#3} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% CV STARTS HERE
+
+\begin{document}
+\vspace{-10pt}
+
+% HEADING
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE FULL NAME}} & Mobile: +1(000)0000000 \\
+  Email: {you@example.com} & Github:
+  \href{https://github.com/yourhandle}{github.com/yourhandle}\\
+  Location: City, ST & LinkedIn: \href{https://www.linkedin.com/in/yourhandle}{linkedin.com/in/yourhandle}
+\end{tabular*}
+\vspace{-10pt}
+
+% SUMMARY
+\section{Summary}
+Two or three plain sentences. Role, years of experience, degree, focus areas. No buzzwords.
+\vspace{-10pt}
+
+% EXPERIENCE
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheadingCompact{Company (Title)}{City, ST}{MM/YY - Present}
+\vspace{-2pt}
+\begin{itemize}[label=$\bullet$, leftmargin=8pt, itemsep=-1pt, topsep=2pt]
+    \item Action-verb bullet describing one thing you built or owned, with a concrete result or number.
+    \item Another bullet. Past tense. Active voice. No fluff.
+\end{itemize}
+
+\resumeSubheadingCompact{Previous Company (Title)}{City, Country}{MM/YY - MM/YY}
+\vspace{-2pt}
+\begin{itemize}[label=$\bullet$, leftmargin=8pt, itemsep=-1pt, topsep=2pt]
+    \item Bullet.
+    \item Bullet.
+\end{itemize}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% EDUCATION
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University Name}{City, ST}
+    {Degree, GPA: X.XX}{MM/YY - MM/YY}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% VOLUNTEER EXPERIENCE  (keep if you have it, delete the section if not)
+\section{Volunteer Experience}
+\resumeSubHeadingListStart
+\resumeSubItem{Role or Group}{One sentence on what you did and the result.}
+\resumeSubItem{Role or Group}{One sentence on what you did and the result.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% PROJECTS  (keep if you have it, delete the section if not)
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeSubItem{Project Name}{One sentence on what it is and what you built.}
+\resumeSubItem{Project Name}{One sentence on what it is and what you built.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% PUBLICATIONS  (keep if you have it, delete the section if not)
+\section{Publications}
+\resumeSubHeadingListStart
+\resumeSubItem{Paper or Article Title}{Where and when it was published.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% HONORS AND AWARDS  (keep if you have it, delete the section if not)
+\section{Honors and Awards}
+\resumeSubHeadingListStart
+\resumeSubItem{Award Name}{Who gave it and when, in one line.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% CERTIFICATIONS  (keep if you have it, delete the section if not)
+\section{Certifications}
+\resumeSubHeadingListStart
+\resumeSubItem{Certification Name}{Issuer and year.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+
+% SKILLS SUMMARY  (keep this last)
+\section{Skills Summary}
+\resumeSubHeadingListStart
+\resumeSubItem{Languages \& Platforms}{Comma, separated, list}
+\resumeSubItem{Tools \& Debugging}{Comma, separated, list}
+\resumeSubHeadingListEnd
+
+% Every section above (except the heading, Summary, Experience, Education)
+% is optional. The master should include every section you have real content
+% for. Tailored job resumes drop whatever a given role doesn't need.
+
+\end{document}
