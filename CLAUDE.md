@@ -34,8 +34,11 @@ If something needed for a task is not in these files, **ask the user**. Do not f
 ├── .claude/skills/
 │   ├── start/SKILL.md         # /start  — build the master resume
 │   ├── jobupdate/SKILL.md     # /jobupdate — tailor a resume to one job (1 page)
+│   ├── atscheck/SKILL.md      # /atscheck — ATS score and review of a resume
 │   ├── build/SKILL.md         # /build — compile all resumes, report page counts
 │   └── humanizer/SKILL.md     # /humanizer — strip AI tells from any text
+├── references/
+│   └── ats-guidelines.md      # ATS scoring rubric the skills follow
 ├── inputs/
 │   ├── linkedin/              # drop your LinkedIn profile PDF here
 │   └── old_resume/            # drop an old resume here (optional)
@@ -59,7 +62,7 @@ Run `bash build.sh` from the workspace root to rebuild every resume. The script 
 - **Ask before guessing.** If a JD calls for something and you cannot tell from the user's sources whether they have done it, ask. Do not paper over the gap.
 - **Tailoring means selection, not creation.** Pick the right bullets from the master, drop the irrelevant ones, reorder for emphasis. That is it.
 - **Keep the master clean.** Do not edit `master_resume.tex` while tailoring for a JD. Changes to the master are a separate, deliberate task the user asks for.
-- **Keep the structure.** Tailored resumes use the same LaTeX preamble and macros as `resume/master/resume_template.tex`. Do not redesign the layout.
+- **Keep the structure.** Tailored resumes use the same LaTeX preamble and macros as `resume/master/resume_template.tex`. Do not redesign the layout. It is ATS-friendly by design (single column, standard headings, text-based, no tables or images for content). Keep it that way, see `references/ats-guidelines.md`.
 
 ## Writing style (applies to everything: chat, resume bullets, LinkedIn, cover letters)
 

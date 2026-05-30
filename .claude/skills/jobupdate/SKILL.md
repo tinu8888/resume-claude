@@ -86,29 +86,39 @@ Selection still comes only from the master. Cutting to fit one page is fine. Add
 
 Point them to `jobs/<folder>/resume.pdf`. Keep the report short.
 
-## Step 8 — Match score and how to raise it
+## Step 8 — ATS score and how to raise it
 
-End every run with a rough match score: how well the tailored resume lines up with the job description.
+End every run with an ATS score for the tailored resume, the way Resume Worded or Jobscan would. Use the rubric in `references/ats-guidelines.md` (read it for categories, weights, and benchmarks).
 
-Work it out honestly. This is your own estimate, not a real ATS number, so say that. Base it on coverage:
+Score it honestly against the JD:
 
-1. List the JD's must-have requirements, core responsibilities, and repeated keywords.
-2. Check how many of them the resume actually backs up with real experience from the master.
-3. Score it: roughly `(requirements clearly covered / total key requirements) * 100`, rounded. Weight the must-haves more than the nice-to-haves. A resume that hits every must-have but misses a couple of optional skills is still a strong match.
+1. Extract the built PDF's text the way an ATS sees it: `pdftotext "jobs/<folder>/resume.pdf" -`.
+2. Pull the JD's must-have skills, tools, certifications, titles, and repeated terms.
+3. Score the five rubric categories (keyword match 40, formatting 20, sections 15, content 15, contact 10) and total them. Back every keyword match with real experience. Resumes built here pass formatting by default, so that category is usually full marks.
 
 Show it like this:
 
-> Match estimate: about 78%.
-> Strong: embedded C, RTOS, motor control, the driver work, your Amazon experience.
-> Partial: the JD wants CAN bus depth, you have one bullet on it.
-> Missing: Rust, and automotive ISO 26262 experience.
+```
+ATS score: 78 / 100   (strong)
+
+Keyword match vs JD ...... 30 / 40
+Formatting ............... 20 / 20
+Sections ................. 15 / 15
+Content quality .......... 10 / 15
+Contact & basics ......... 3 / 10
+```
+
+> Strong: embedded C, RTOS, motor control, your Amazon experience.
+> Partial: the JD weighs CAN bus heavily, you have one bullet on it.
+> Missing keywords: Rust, ISO 26262. Add your phone number, it's missing.
 
 Then ask if they want to raise it, and suggest concrete ways, all of which respect the hard rule (selection, never invention):
 
-- **Real experience you haven't listed.** Ask directly: "The JD weighs CAN bus heavily and you've got one line on it. Have you done more with CAN that we could pull from your background? If so, telling me gets the score up." If they confirm with real detail, add it (and offer to update the master).
-- **Reordering or rewording.** Point out where leading with a different bullet, or matching the JD's exact wording for a tool you already use, would land harder.
-- **A short skills line** for tools the user genuinely knows that the JD names but the resume doesn't surface (only if they're true).
+- **Real experience you haven't listed.** Ask directly: "The JD weighs CAN bus heavily and you've got one line on it. Have you done more with CAN we could pull from your background? If so, telling me gets the score up." If they confirm with real detail, add it (and offer to update the master).
+- **Match the JD's exact wording** for tools the user already uses (their resume says "K8s," the JD says "Kubernetes," use the JD's term).
+- **Quantify a bullet** that's missing a number, if the user has one.
+- **Fix a missing contact field** (phone, LinkedIn).
 
-Be honest about the ceiling. If the JD needs a skill the user does not have, say so plainly: the score won't reach 100% on this one, and padding it with things they haven't done is not an option. A truthful 75% beats a fake 95% that falls apart in the interview.
+Be honest about the ceiling. If the JD needs a skill the user does not have, say so: the score won't reach the top, and padding it with things they haven't done is not an option. A real 75 beats a fake 95 that falls apart in the interview.
 
-If the user adds real detail, rebuild, re-check the page count, and give the updated score.
+If the user adds real detail, rebuild, re-check the page count, and give the updated score. For a deeper standalone review at any time, they can run `/atscheck`.

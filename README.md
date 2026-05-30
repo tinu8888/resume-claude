@@ -3,7 +3,8 @@
 A small workspace for writing and tailoring resumes with Claude Code. Clone or copy the folder, open it with Claude (terminal, desktop app, or an IDE extension), and two skills do the work:
 
 - **`/start`** builds your master resume from your LinkedIn profile and an old resume.
-- **`/jobupdate`** tailors a fresh resume to a specific job, built only from your master.
+- **`/jobupdate`** tailors a fresh resume to a specific job, built only from your master, and gives it an ATS score.
+- **`/atscheck`** runs a standalone ATS review of any resume with a 0-100 score and fixes.
 
 It's deliberately low on dependencies: one TeX distribution to make PDFs, and that's it. No Python, no pip, no Node.
 
@@ -100,6 +101,16 @@ At the end it gives you a **rough match score** (an estimate of how well the res
 
 Compiles the master and every tailored resume, and reports each one's page count. Same as running `bash build.sh` yourself.
 
+### Get an ATS score: `/atscheck`
+
+```
+/atscheck
+```
+
+Runs an ATS (Applicant Tracking System) review and gives a 0-100 score with a category breakdown, the same idea as Resume Worded or Jobscan. It reads the resume the way an ATS does (the PDF's text layer) and scores keyword match against the JD, formatting, section completeness, content quality, and contact basics, then lists specific fixes to raise the score.
+
+`/jobupdate` already gives you this score at the end of every tailored resume. Run `/atscheck` on its own to score your master, an older resume, or recheck after edits. The rubric it uses is in [`references/ats-guidelines.md`](references/ats-guidelines.md). It won't pad the score with skills you don't have.
+
 ### Clean up any text: `/humanizer`
 
 ```
@@ -135,7 +146,8 @@ In Claude Code you run a skill by typing a slash and its name: `/start`, `/jobup
 ├── install.sh                 # one command to install it all
 ├── setup.sh                   # checks your machine
 ├── build.sh                   # compiles every resume to PDF
-├── .claude/skills/            # /start, /jobupdate, /build, /humanizer
+├── .claude/skills/            # /start, /jobupdate, /atscheck, /build, /humanizer
+├── references/ats-guidelines.md  # the ATS scoring rubric the skills follow
 ├── inputs/
 │   ├── linkedin/              # your LinkedIn profile PDF goes here
 │   └── old_resume/            # an old resume (optional)
