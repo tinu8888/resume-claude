@@ -136,6 +136,45 @@ In Claude Code you run a skill by typing a slash and its name: `/start`, `/jobup
 
 ---
 
+## Using this in OpenAI Codex instead
+
+You can run the same `/start`, `/jobupdate`, `/atscheck`, `/build`, and `/humanizer` commands in **OpenAI Codex CLI**. Codex doesn't read `.claude/skills/`, so one script converts the workspace for it.
+
+Codex uses two things in place of Claude's setup:
+
+- **`AGENTS.md`** at the folder root for the house rules (Codex's version of `CLAUDE.md`).
+- **Custom prompts** in `~/.codex/prompts/`, where each `name.md` file becomes a `/name` command.
+
+The script `codex-setup.sh` generates both from the files already here.
+
+**1. Install Codex** if you don't have it: https://developers.openai.com/codex/cli
+
+**2. Run the converter** from this folder:
+
+```
+bash codex-setup.sh
+```
+
+It writes `AGENTS.md` (pointing Codex at `CLAUDE.md`, so the rules stay in one place) and installs the five commands into `~/.codex/prompts/`. It backs up anything it would overwrite, and re-running it is safe.
+
+**3. Use it.** Start Codex from inside this folder so the file paths resolve:
+
+```
+cd path/to/resume-claude
+codex
+```
+
+Then type `/start`, `/jobupdate`, `/atscheck`, `/build`, or `/humanizer`, the same as in Claude.
+
+A few notes:
+
+- The TeX setup is the same. Run `bash install.sh` once either way, the PDF still builds on your machine.
+- The commands go to `~/.codex/prompts/`, which is global, so they show up in every Codex project. Want them scoped to just this folder instead? Run `bash codex-setup.sh --local`, then `export CODEX_HOME="$(pwd)/.codex"` before starting Codex.
+- Edit a command by editing its skill in `.claude/skills/<name>/SKILL.md`, then re-run `bash codex-setup.sh`. That keeps Claude Code and Codex in sync from one source.
+- To remove the Codex commands: `bash codex-setup.sh --uninstall`.
+
+---
+
 ## Folder layout
 
 ```
@@ -146,6 +185,7 @@ In Claude Code you run a skill by typing a slash and its name: `/start`, `/jobup
 ├── install.sh                 # one command to install it all
 ├── setup.sh                   # checks your machine
 ├── build.sh                   # compiles every resume to PDF
+├── codex-setup.sh             # makes the commands work in OpenAI Codex too
 ├── .claude/skills/            # /start, /jobupdate, /atscheck, /build, /humanizer
 ├── references/ats-guidelines.md  # the ATS scoring rubric the skills follow
 ├── inputs/
